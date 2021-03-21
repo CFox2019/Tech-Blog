@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "npm run watch",
+    "seed": "node seeds/seed.js"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +21,10 @@
     "express-session-sequelize": "^2.3.0",
     "mysql2": "^2.2.5",
     "sequelize": "^6.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "prettier": "^2.1.2"
   }
 }
