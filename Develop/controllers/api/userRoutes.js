@@ -1,15 +1,28 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const { UserParams } = require('../../models/request_params');
+const { UserSerializer } = require('../../models/serializers');
 
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const userParams = new UserParams(req.body)
+    if (!userParams.username || !userParams.password) {
+      res
+        .status(400)
+        .json({ message: 'Missing username or password, please try again' });
+        return;
+    }
+
+    const userData = await User.create({
+      username: userParams.username,
+      password: userParams.password
+    });
 
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json(new UserSerializer(userData));
     });
   } catch (err) {
     res.status(400).json(err);
@@ -18,8 +31,15 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username } });
+    const userParams = new UserParams(req.body)
+    if (!userParams.username || !userParams.password) {
+      res
+        .status(400)
+        .json({ message: 'Missing username or password, please try again' });
+        return;
+    }
 
+    const userData = await User.findOne({ where: { username: userParams.username } });
     if (!userData) {
       res
         .status(400)
@@ -27,8 +47,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
-
+    const validPassword = await userData.checkPassword(userParams.password);
     if (!validPassword) {
       res
         .status(400)
@@ -40,10 +59,14 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.json({
+        user: new UserSerializer(userData),
+        message: 'You are now logged in!'
+      });
     });
 
   } catch (err) {
+    console.log('error', err);
     res.status(400).json(err);
   }
 });
