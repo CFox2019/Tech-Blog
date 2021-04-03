@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
       res
         .status(400)
         .json({ message: 'Missing username or password, please try again' });
-        return;
+      return;
     }
 
     const userData = await User.create({
@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
       res
         .status(400)
         .json({ message: 'Missing username or password, please try again' });
-        return;
+      return;
     }
 
     const userData = await User.findOne({ where: { username: userParams.username } });
@@ -55,6 +55,31 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.json({
+        user: new UserSerializer(userData),
+        message: 'You are now logged in!'
+      });
+    });
+
+  } catch (err) {
+    console.log('error', err);
+    res.status(400).json(err);
+  }
+});
+
+router.post('/signup', async (req, res) => {
+  try {
+    const userParams = new UserParams(req.body)
+    if (!userParams.username || !userParams.password) {
+      res
+        .status(400)
+        .json({ message: 'Missing username or password, please try again' });
+      return;
+    }
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;

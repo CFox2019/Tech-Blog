@@ -1,0 +1,19 @@
+html body {
+    background-color: #9eb6ae;
+    min-height: 100%;
+}
+
+nav a,
+strong a,
+small {
+    color: #9eb6ae;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+ h1 button {
+    background-color: #9eb6ae;
+    border: #9eb6ae;
+    border-radius: 10px;
+    box-shadow: 4px 4px 3px #8a8f8d;
+}

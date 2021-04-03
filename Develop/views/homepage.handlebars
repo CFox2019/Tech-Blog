@@ -1,16 +1,16 @@
 <!-- Loop over each object in the blogs array -->
 {{#each blogs as |blog| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <a href="/blog/{{blog.id}}">{{blog.title}}</a>
-    </h2>
-    <p>Created by {{blog.user.username}} on {{format_date blog.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{blog.content}}
-    </p>
+<div class="mb-3 col-md-10">
+  <div class="border border-dark border-3 row mb-4 blog">
+    <div class="header py-2 bg-dark">
+        <strong><a href="/blog/{{blog.id}}">{{blog.title}}</a></strong>
+        <small class="float-end">Created by {{blog.user.username}} on {{format_date blog.date_created}}</small>
+    </div>
+    <div>
+      <p>
+        {{blog.content}}
+      </p>
+    </div>
   </div>
 </div>
 {{/each}}
