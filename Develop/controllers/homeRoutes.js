@@ -92,6 +92,8 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-
+router.get('/newpost', withAuth, (req, res) => {
+  res.render('newpost');
+});
 
 module.exports = router;

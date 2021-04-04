@@ -41,8 +41,9 @@ router.delete('/:id', withAuth, async (req, res) => {
       return;
     }
 
-    res.status(200).json(new BlogSerializer(blogData));
+    res.status(204).send();
   } catch (err) {
+    console.log('err', err);
     res.status(500).json(err);
   }
 });

@@ -5,24 +5,6 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Blog:</h3>
-
-    <form class="form new-blog-form">
-      <div class="form-group">
-        <label for="blog-title">Title:</label>
-        <input class="form-input" type="text" id="blog-title" name="blog-title" />
-      </div>
-      <div class="form-group">
-        <label for="blog-contents">Content:</label>
-        <textarea class="form-input" id="blog-content" name="blog-content"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
   {{#if blogs.length}}
   <div class="col-md-6 blog-list">
     <h3>Current Blogs:</h3>
@@ -33,7 +15,7 @@
         <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+        <button class="blog-post btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -43,8 +25,8 @@
 
 <div class="container">
   <h1>
-    <button class="mx-auto text-white bg-dark p-3 mb-5 ms-3" href="/newPost">+ New Post</button>
+    <a href="/newpost"><button class="mx-auto text-white bg-dark p-3 mb-5 ms-3">+ New Post</button></a>
   </h1>
 </div>
 
-<script src="./js/dashboard.js"></script>
+<script src="../js/dashboard.js"></script>
