@@ -4,6 +4,7 @@ html body {
 }
 
 nav a,
+strong,
 strong a,
 small {
     color: #9eb6ae;
