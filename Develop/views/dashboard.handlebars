@@ -6,16 +6,17 @@
 
 <div class="row mt-4">
   {{#if blogs.length}}
-  <div class="col-md-6 blog-list">
+  <div class="mb-3 col-md-12 blog-list">
     <h3>Current Blogs:</h3>
 
     {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
+    <div class="border border-dark border-3 row mb-4">
+      <div class="header py-2 bg-dark">
         <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+        <small class="float-end">Created by {{blog.user.username}} on {{format_date blog.date_created}}</small>
       </div>
-      <div class="col-md-4">
-        <button class="blog-post btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+      <div class="col-md-12 d-grid gap-2">
+        <button class="blog-post p-2 my-3 btn btn-sm btn-secondary" data-id="{{blog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -23,7 +24,7 @@
   {{/if}}
 </div>
 
-<div class="container">
+<div class="container text-center">
   <h1>
     <a href="/newpost"><button class="mx-auto text-white bg-dark p-3 mb-5 ms-3">+ New Post</button></a>
   </h1>
