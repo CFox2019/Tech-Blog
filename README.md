@@ -1,10 +1,11 @@
 ![](https://img.shields.io/badge/license-MIT-brightgreen)
 
-# Tech Blog
+# The Tech Blog
 
 ## Table of Contents
 
 * [Description](#description)
+* [Installation] (#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Tests](#tests)
@@ -13,9 +14,11 @@
 
 ## Description
 A technology based blogging website that allows users to securely create, update, and delete their own blogs, as well as comment on another user's blog.
-## Usage
-Once you are on the Tech Blog website, you can view blogs, which are public. In order to get to your dashboard to create, update, or delete your own blogs, or to comment on another user's blog, you must login in, or signup if you haven't already. Once you are logged in, you may create a new post, update or delete any already created blogs. You may also click on anyones blog to comment on the selected blog.
 
+## Installation
+run 'npm i' in the command line
+## Usage
+Once tables are built in MySQL, run 'npm run watch' in command line
 ### Screenshots
 ![The Tech Blog-Main](Develop/views/assets/the-tech-blog-1.png)
 ![The Tech Blog-Blog Comment](Develop/views/assets/the-tech-blog-2.png)
