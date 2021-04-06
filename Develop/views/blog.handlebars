@@ -1,19 +1,41 @@
 <div class="mb-3 col-md-12">
-  <div class="border border-dark border-3 row mb-4 blog">
-    <div class="header py-2 bg-dark">
-      <strong><h2>{{title}}</h2></strong>
-      <small class="float-end"><p>Created by {{user.username}} on {{format_date date_created}}</p></small>
+  <div class="row">
+    <div class="border border-dark border-3 row mb-4">
+      <div class="header py-2 bg-dark col-12">
+        <h2>{{title}}</h2>
+        <small class="float-end">Posted by {{user.username}} on {{format_date date_created}}</small>
+      </div>
+      <div class="container">
+        <p>{{content}}</p>
+      </div>
     </div>
-    <p>{{content}}</p>
   </div>
-  <form class="form new-comment border border-dark border-3 row mb-4 comment">
+
+  {{#if comments.length}}
+    {{#each comments as |comment|}}
+      <div class="mb-3 col-md-12 comment-list">
+        <p>{{comment.message}}</p>
+        <p>-{{comment.user.username}}, {{format_date comment.date_created}}</p>
+      </div>
+    {{/each}}
+  {{/if}}
+
+  <div class="row">
+    <form class="new-comment-form border border-dark border-3 row mb-4">
       <div class="form-group">
-        <label for="blog-comments">Comment:</label>
-        <textarea class="form-input" id="blog-comment" name="blog-comment"></textarea>
+        <label for="blog-comment">Comment:</label>
+        <textarea class="form-input" id="message" name="blog-comment"></textarea>
+        <div class="form-group text-center col-md-12 d-grid gap-2">
+          <button
+            type="submit"
+            class="btn btn-secondary new-comment-btn"
+            data-blog-id={{id}} >
+              Submit
+          </button>
+        </div>
       </div>
-      <div class="form-group text-center col-md-12 d-grid gap-2">
-        <button type="submit" class="btn btn-secondary">Submit</button>
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
+
+<script src="../js/blog.js"></script>

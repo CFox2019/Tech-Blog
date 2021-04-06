@@ -12,11 +12,8 @@
     {{#each blogs as |blog|}}
     <div class="border border-dark border-3 row mb-4">
       <div class="header py-2 bg-dark">
-        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+        <h4><a href="/blog/{{blog.id}}/edit">{{blog.title}}</a></h4>
         <small class="float-end">Created by {{blog.user.username}} on {{format_date blog.date_created}}</small>
-      </div>
-      <div class="col-md-12 d-grid gap-2">
-        <button class="blog-post p-2 my-3 btn btn-sm btn-secondary" data-id="{{blog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

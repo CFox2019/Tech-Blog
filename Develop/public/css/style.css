@@ -4,9 +4,9 @@ html body {
 }
 
 nav a,
-strong,
 strong a,
-small {
+small,
+h2 {
     color: #9eb6ae;
     text-decoration: none;
     font-size: 1.5em;
