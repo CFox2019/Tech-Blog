@@ -6,7 +6,8 @@ html body {
 nav a,
 strong a,
 small,
-h2 {
+h2,
+h4 a {
     color: #9eb6ae;
     text-decoration: none;
     font-size: 1.5em;

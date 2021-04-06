@@ -1,9 +1,3 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
-  </div>
-</div>
-
 <div class="row mt-4">
   {{#if blogs.length}}
   <div class="mb-3 col-md-12 blog-list">
@@ -12,8 +6,14 @@
     {{#each blogs as |blog|}}
     <div class="border border-dark border-3 row mb-4">
       <div class="header py-2 bg-dark">
-        <h4><a href="/blog/{{blog.id}}/edit">{{blog.title}}</a></h4>
-        <small class="float-end">Created by {{blog.user.username}} on {{format_date blog.date_created}}</small>
+        <h4>
+          <a href="/blog/{{blog.id}}/edit">
+            {{blog.title}}
+          </a>
+        </h4>
+        <small class="float-end">
+          Created by {{blog.user.username}} on {{format_date blog.date_created}}
+        </small>
       </div>
     </div>
     {{/each}}
@@ -23,7 +23,11 @@
 
 <div class="container text-center">
   <h1>
-    <a href="/newpost"><button class="mx-auto text-white bg-dark p-3 mb-5 ms-3">+ New Post</button></a>
+    <a href="/newpost">
+      <button class="mx-auto text-white bg-dark p-3 mb-5 ms-3">
+        + New Post
+      </button>
+    </a>
   </h1>
 </div>
 
