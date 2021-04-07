@@ -132,7 +132,7 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/newpost', withAuth, (req, res) => {
-  res.render('newpost');
+  res.render('newPost');
 });
 
 module.exports = router;
