@@ -8,30 +8,29 @@
   <p>{{content}}</p>
 </div>
 
-  {{#if comments.length}}
-  {{#each comments as |comment|}}
-  <div class="border border-dark border-3 row mb-4">
-    <div class="mb-4 col-md-12 comment-list">
-      <p>{{comment.message}}</p>
-      <p>-{{comment.user.username}}, {{format_date comment.date_created}}</p>
-    </div>
+{{#if comments.length}}
+{{#each comments as |comment|}}
+<div class="border border-dark border-3 row mb-4">
+  <div class="mb-4 py-2 col-md-12 comment-list">
+    <p>{{comment.message}}</p>
+    <p>-{{comment.user.username}}, {{format_date comment.date_created}}</p>
   </div>
-  {{/each}}
-  {{/if}}
+</div>
+{{/each}}
+{{/if}}
 
 <div class="border border-3 border-dark row mb-4">
   <form class="form-group new-comment-form">
-      <label for="blog-comment">Comment:</label>
-      <textarea class="form-input" id="message" name="blog-comment">
-        </textarea>
-      <div class="form-group text-center d-grid gap-2">
-        <button type="submit" class="btn btn-secondary new-comment-btn" data-blog-id={{id}}>
-          Submit
-        </button>
+    <label for="blog-comment">Comment:</label>
+    <textarea class="form-input" id="message" name="blog-comment">
+      </textarea>
+    <div class="form-group d-grid gap-2">
+      <button type="submit" class="btn btn-secondary new-comment-btn" data-blog-id={{id}}>
+        Submit
+      </button>
+    </div>
   </form>
 </div>
-
-
 
 
 <script src="../js/blog.js"></script>
