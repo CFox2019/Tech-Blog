@@ -24,6 +24,11 @@ Once tables are built in MySQL, run 'npm run watch' in command line
 ![The Tech Blog-Blog Comment](/views/assets/the-tech-blog-2.png)
 ![The Tech Blog-Login](/views/assets/the-tech-blog-3.png)
 ![The Tech Blog-Signup](/views/assets/the-tech-blog-4.png)
+![The Tech Blog-New Post Button](views/assets/the-tech-blog-5.png)
+![The Tech Blog-New Post](views/assets/the-tech-blog-6.png)
+![The Tech Blog-Posted Blog](views/assets/the-tech-blog-7.png)
+![The Tech Blog-Update](views/assets/the-tech-blog-8.png)
+![The Tech Blog-Updated Blog](views/assets/the-tech-blog-9.png)
 ### Links
 * [Github: Tech Blog](https://github.com/CFox2019/Tech-Blog)
 * [Live Heroku link: The Tech Blog](https://the-tech-blog.herokuapp.com/)
