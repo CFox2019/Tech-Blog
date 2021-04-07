@@ -20,13 +20,13 @@ run 'npm i' in the command line
 ## Usage
 Once tables are built in MySQL, run 'npm run watch' in command line
 ### Screenshots
-![The Tech Blog-Main](Develop/views/assets/the-tech-blog-1.png)
-![The Tech Blog-Blog Comment](Develop/views/assets/the-tech-blog-2.png)
-![The Tech Blog-Login](Develop/views/assets/the-tech-blog-3.png)
-![The Tech Blog-Signup](Develop/views/assets/the-tech-blog-4.png)
+![The Tech Blog-Main](/views/assets/the-tech-blog-1.png)
+![The Tech Blog-Blog Comment](/views/assets/the-tech-blog-2.png)
+![The Tech Blog-Login](/views/assets/the-tech-blog-3.png)
+![The Tech Blog-Signup](/views/assets/the-tech-blog-4.png)
 ### Links
 * [Github: Tech Blog](https://github.com/CFox2019/Tech-Blog)
-* [Live Heroku link: The Tech Blog]()
+* [Live Heroku link: The Tech Blog](https://the-tech-blog.herokuapp.com/)
 
 ## Contributing
 If you'd like to contribute to this project, start by forking the repository to your personal GitHub account. From there, make your changes and then open a Pull Request in this repository against the branch in your fork.
